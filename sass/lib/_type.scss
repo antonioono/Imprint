@@ -1,0 +1,23 @@
+$default-color: rgba(0,0,0,.75);
+$type-size: 10pt;
+$leading: 1.5em;
+
+body {
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: $type-size;
+    color: $default-color;
+    line-height: $leading;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: $default-color;
+}
+
+@mixin small-caps {
+    font-size: .75em;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-weight: bold;
+}
