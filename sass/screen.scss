@@ -2,6 +2,14 @@
 @import "./lib/_type.scss";
 @import "./lib/_grid.scss";
 
+header {
+    h1 {
+        @include small-caps(1em);
+        font-family: $demi;
+        padding-bottom: 1em;
+    }
+}
+
 nav {
     @include small-caps;
     
@@ -12,14 +20,26 @@ nav {
             display: inline-block;
             
             a {
-                padding: .5em 0;
-                margin-right: .5em;
-                font-size: 2em;
+                padding: .25rem 0;
+                top: -.25rem;
+                margin-right: 2rem;
+                @include small-caps(1em);
+                font-family: $bold;
+                position: relative;
                 
                 &.current {
                     border-bottom: 4pt solid $default-color;
                 }
             }
         }
+    }
+    
+    .profile-picture {
+        height: 4em;
+        width:  4em;
+        border-radius: 50%;
+        position: absolute;
+        top: 1em;;
+        right: $gutter;
     }
 }

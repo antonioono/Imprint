@@ -1,9 +1,47 @@
+// font-family:'AvenirNextLTW01-UltraLi';
+// font-family:'AvenirNextLTW01-UltraLt 721260';
+// font-family:'Avenir Next W01 Thin';
+// font-family:'AvenirNextW01-ThinItali';
+// font-family:'Avenir Next W01 Light';
+// font-family:'AvenirNextW01-LightItal';
+// font-family:'AvenirNextLTW01-Regular';
+// font-family:'AvenirNextLTW01-Italic';
+// font-family:'AvenirNextLTW01-Medium';
+// font-family:'AvenirNextLTW01-MediumI 721278';
+// font-family:'Avenir Next LT W01 Demi';
+// font-family:'AvenirNextLTW01-DemiIta';
+// font-family:'Avenir Next LT W01 Bold';
+// font-family:'AvenirNextLTW01-BoldIta';
+// font-family:'AvenirNextLTW01-Heavy';
+// font-family:'AvenirNextLTW01-HeavyIt 721290';
+// font-family:'AvenirNextW10-UltraLigh 1108779';
+// font-family:'Avenir Next W10 Thin';
+// font-family:'AvenirNextW10-ThinItali';
+// font-family:'Avenir Next W10 Light';
+// font-family:'AvenirNextW10-LightItal';
+// font-family:'Avenir Next W10 Regular';
+// font-family:'Avenir Next W10 Italic';
+// font-family:'Avenir Next W10 Medium';
+// font-family:'AvenirNextW10-MediumIta';
+// font-family:'Avenir Next W10 Demi';
+// font-family:'AvenirNextW10-DemiItali';
+// font-family:'Avenir Next W10 Bold';
+// font-family:'AvenirNextW10-BoldItali';
+// font-family:'Avenir Next W10 Heavy';
+// font-family:'AvenirNextW10-HeavyItal';
+
+$regular: 'AvenirNextLTW01-Regular';
+$bold:    'Avenir Next LT W01 Bold';
+$demi:    'Avenir Next LT W01 Demi';
+$heavy:   'AvenirNextLTW01-Heavy';
+$light:   'Avenir Next W10 Light';
+
 $default-color: rgba(0,0,0,.75);
 $type-size: 10pt;
 $leading: 1.5em;
 
 body {
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: $regular;
     font-size: $type-size;
     color: $default-color;
     line-height: $leading;
@@ -15,9 +53,8 @@ a {
     color: $default-color;
 }
 
-@mixin small-caps {
-    font-size: .75em;
+@mixin small-caps($size: 1em) {
     text-transform: uppercase;
     letter-spacing: .125em;
-    font-weight: bold;
+    font-size: $size;
 }
