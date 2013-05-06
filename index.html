@@ -10,16 +10,20 @@
 	</head>
 	<body>
 		<header>
-			<h1>Tint</a></h1>
+			<h1 class="logo">Imprint</h1>
 		</header>
 		<nav>
 			<ul>
-				<li><a href="#" class="you current">Joseph</a></li>
-				<li><a href="#" class="friends">Friends</a></li>
+				<li>
+					<a href="#" id="profile" class="profile current">Joseph</a>
+				</li>
+				<li>
+					<a href="#" id="friends" class="friends">Friends</a>
+				</li>
 			</ul>
 			<img class="profile-picture" src="./images/profile-picture.jpg">
 		</nav>
-		<section class="profile">
+		<section class="page profile open">
 			<ul>
 				<li class="run habit">
 					<h1>Run</h1>
@@ -40,46 +44,46 @@
 						<section class="check-ins">
 							<h1>Check-ins</h1>
 							<ul>
-								<li>
+								<li class="good">
 									<time>4 hours ago</time>
 								</li>
-								<li>
+								<li class="good">
 									<time>12 hours ago</time>
 								</li>
-								<li>
+								<li class="good">
 									<time>Yesterday afternoon</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Yesterday morning</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Sunday</time>
 								</li>
-								<li>
+								<li class="good">
 									<time>Sunday</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Saturday evening</time>
-								</li>
+								<li class="good">
 								<li>
 									<time>Saturday morning</time>
 								</li>
 								<li>
 									<time>Thursday</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Wednesday</time>
-								</li>
+								<li class="good">
 								<li>
 									<time>A week ago</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Tuesday April 30</time>
-								</li>
+								<li class="good">
 								<li>
 									<time>Monday April 29</time>
 								</li>
-								<li>
+								<li class="bad">
 									<time>Sunday April 28</time>
 								</li>
 							</ul>
@@ -90,7 +94,7 @@
 					</section>
 				</li>
 				<li class="smoke habit">
-					<h1>Run</h1>
+					<h1>Smoking</h1>
 				</li>
 				<li class="eat habit">
 					<h1>Late-night snacking</h1>
@@ -102,6 +106,176 @@
 					<h1>Meditate</h1>
 				</li>
 			</ul>
+		</section>
+		<section class="page friends closed">
+			<section class="profile">
+				<ul>
+					<li class="run habit">
+						<h1>Run</h1>
+						<section class="detail">
+							<header>
+								<h1></h1>
+							</header>
+							<section class="settings">
+								<form>
+									<h1>Remind me</h1>
+									<ul>
+										<li>At a time</li>
+										<li>At a location</li>
+										<li>At an interval</li>
+									</ul>
+								</form>
+							</section>
+							<section class="check-ins">
+								<h1>Check-ins</h1>
+								<ul>
+									<li class="good">
+										<time>4 hours ago</time>
+									</li>
+									<li class="good">
+										<time>12 hours ago</time>
+									</li>
+									<li class="good">
+										<time>Yesterday afternoon</time>
+									</li>
+									<li class="bad">
+										<time>Yesterday morning</time>
+									</li>
+									<li class="bad">
+										<time>Sunday</time>
+									</li>
+									<li class="good">
+										<time>Sunday</time>
+									</li>
+									<li class="bad">
+										<time>Saturday evening</time>
+									<li class="good">
+									<li>
+										<time>Saturday morning</time>
+									</li>
+									<li>
+										<time>Thursday</time>
+									</li>
+									<li class="bad">
+										<time>Wednesday</time>
+									<li class="good">
+									<li>
+										<time>A week ago</time>
+									</li>
+									<li class="bad">
+										<time>Tuesday April 30</time>
+									<li class="good">
+									<li>
+										<time>Monday April 29</time>
+									</li>
+									<li class="bad">
+										<time>Sunday April 28</time>
+									</li>
+								</ul>
+							</section>
+							<section class="line-graph">
+								
+							</section>
+						</section>
+					</li>
+					<li class="smoke habit">
+						<h1>Smoking</h1>
+					</li>
+					<li class="eat habit">
+						<h1>Late-night snacking</h1>
+					</li>
+					<li class="read habit">
+						<h1>Read</h1>
+					</li>
+					<li class="meditation habit">
+						<h1>Meditate</h1>
+					</li>
+				</ul>
+			</section>
+			<section class="profile closed">
+				<ul>
+					<li class="run habit">
+						<h1>Run</h1>
+						<section class="detail">
+							<header>
+								<h1></h1>
+							</header>
+							<section class="settings">
+								<form>
+									<h1>Remind me</h1>
+									<ul>
+										<li>At a time</li>
+										<li>At a location</li>
+										<li>At an interval</li>
+									</ul>
+								</form>
+							</section>
+							<section class="check-ins">
+								<h1>Check-ins</h1>
+								<ul>
+									<li class="good">
+										<time>4 hours ago</time>
+									</li>
+									<li class="good">
+										<time>12 hours ago</time>
+									</li>
+									<li class="good">
+										<time>Yesterday afternoon</time>
+									</li>
+									<li class="bad">
+										<time>Yesterday morning</time>
+									</li>
+									<li class="bad">
+										<time>Sunday</time>
+									</li>
+									<li class="good">
+										<time>Sunday</time>
+									</li>
+									<li class="bad">
+										<time>Saturday evening</time>
+									<li class="good">
+									<li>
+										<time>Saturday morning</time>
+									</li>
+									<li>
+										<time>Thursday</time>
+									</li>
+									<li class="bad">
+										<time>Wednesday</time>
+									<li class="good">
+									<li>
+										<time>A week ago</time>
+									</li>
+									<li class="bad">
+										<time>Tuesday April 30</time>
+									<li class="good">
+									<li>
+										<time>Monday April 29</time>
+									</li>
+									<li class="bad">
+										<time>Sunday April 28</time>
+									</li>
+								</ul>
+							</section>
+							<section class="line-graph">
+								
+							</section>
+						</section>
+					</li>
+					<li class="smoke habit">
+						<h1>Smoking</h1>
+					</li>
+					<li class="eat habit">
+						<h1>Late-night snacking</h1>
+					</li>
+					<li class="read habit">
+						<h1>Read</h1>
+					</li>
+					<li class="meditation habit">
+						<h1>Meditate</h1>
+					</li>
+				</ul>
+			</section>
 		</section>
 	</body>
 	<footer>
