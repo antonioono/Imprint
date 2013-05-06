@@ -4,6 +4,9 @@
 @import "./lib/_type.scss";
 @import "./lib/_grid.scss";
 
+
+
+
 // @mixin keyframes($name) {
 //   @-webkit-keyframes #{$name} {
 //     @content; 
@@ -24,19 +27,25 @@ body {
     height: 100%;
     width: 100%;
     text-transform: lowercase;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 header {
     h1 {
-        @include small-caps(1em);
-        font-family: $demi;
+        // @include small-caps(1em);
+        font-family: $bold;
         padding-bottom: 1em;
-        cursor: pointer;
     }
 }
 
 nav {
-    @include small-caps;
+    // @include small-caps;
     
     ul {
         list-style: none;
@@ -48,12 +57,12 @@ nav {
                 padding: .25rem 0;
                 top: -.25rem;
                 margin-right: 2rem;
-                @include small-caps(1em);
+                // @include small-caps(1em);
                 font-family: $bold;
                 position: relative;
                 
                 &.current {
-                    border-bottom: 4pt solid $default-color;
+                    border-bottom: 3pt solid $default-color;
                 }
             }
         }
@@ -107,8 +116,9 @@ section.page {
     
         // -webkit-animation: profile-spin 10s infinite;
         .habit {
-    
+
             > h1 {
+                cursor: pointer;
                 text-transform: lowercase;
                 position: relative;
                 left: 0;
@@ -118,7 +128,13 @@ section.page {
                 background-size: auto 100%;
                 background-repeat: no-repeat;
                 @include transition-all;
-                @include transform(scale(.75));
+                // @include transform(scale(.75));
+                
+                font-family: $bold;
+                // left: 0;
+                color: white;
+                font-size: 1.5em;
+                text-indent: -2.5%;
             }
     
             .detail {
@@ -127,14 +143,24 @@ section.page {
                 position: relative;
                 left: $col2 - ($gutter * 2);
                 @include transition-all;
+                
+                .line-graph {
+                    position: fixed;
+                    bottom: -8em;
+                    left: 0;
+                    right: 0;
+                    background: blue;
+                    height: 6em;
+                    @include transition-all;
+                }
             }
     
             &.run {
     
                 > h1 {
-                    top: 15%;
-                    left: 10%;
-                    padding:25%;
+                    top: 9%;
+                    left: 6%;
+                    padding:30%;
                     // width: 25%;
                     background-image: url('../images/habits/run.png');
                 }
@@ -143,26 +169,27 @@ section.page {
             &.smoke {
                 > h1 {
                     top: 30%;
-                    left: 70%;
-                    padding: 10%;
+                    left: 60%;
+                    padding: 12%;
                     background-image: url('../images/habits/smoke.png');
                 }
+                z-index: 999;
             }
     
             &.eat {
                 > h1 {
-                    top: 30%;
-                    left: 30%;
-                    padding: 12%;
+                    top: 12%;
+                    left: 42%;
+                    padding: 15%;
                     background-image: url('../images/habits/eat.png');
                 }
             }
     
             &.read {
                 > h1 {
-                    top: 20%;
-                    left: 40%;
-                    padding: 15%;
+                    top: 66%;
+                    left: 36%;
+                    padding: 9%;
                     background-image: url('../images/habits/read.png');   
                 }
             }
@@ -182,11 +209,7 @@ section.page {
                 width: 100%;
     
                 > h1 {
-                    font-family: $bold;
-                    left: 0;
-                    color: white;
-                    font-size: 2em;
-                    @include transform(scale(1));
+                    z-index: 9999;
                 }
     
                 .detail {
@@ -195,17 +218,12 @@ section.page {
                     opacity: 1;
     
                     h1 {
-                        @include small-caps(.75em);
+                        // @include small-caps(.75em);
                         font-family: $demi;
                     }
     
                     .line-graph {
-                        position: fixed;
                         bottom: 0;
-                        left: 0;
-                        right: 0;
-                        background: blue;
-                        height: 6em;
                     }
     
                     .check-ins {
@@ -224,16 +242,32 @@ section.page {
                     }
                 }
             }
+            
+            &.other-hover {
+                > h1 {
+                    opacity: .5;
+                    color: transparent;
+                }
+                
+                &.open {
+                    > h1 {
+                        opacity: 1 !important;
+                        color: white;
+                    }
+                }
+            }
     
             &.closed {
                 > h1 {
-                    @include transform(scale(.25));
-                    opacity: .25;
-                    top: -2em !important;
-                    left: $col2;
-                    -webkit-filter: blur(20px);
+                    // @include transform(scale(.25));
+                    opacity: .2 !important;
+                    color: transparent;
+                    // top: -2em !important;
+                    // left: $col2;
+                    // -webkit-filter: blur(20px);
                 }
             }
+            
         }
     }
     
@@ -243,6 +277,10 @@ section.page {
             width: $col2;
             position: relative;
             display: inline-block;
+            
+            &.open {
+                width: $col4;
+            }
         }
     }
 }

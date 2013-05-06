@@ -1,17 +1,26 @@
 $(document).ready(function(){
-    $(".profile.open .habit").click(function(){
-        if ($(this).hasClass("closed")) {
-            $(".open").removeClass("open");
-            $(".closed").removeClass("closed");
+    $(".profile.open .habit").click(function() {
+        if (($(this).hasClass("closed")) || ($(this).hasClass("open"))) {
+            $(this).siblings(".open").removeClass("open");
+            $(this).siblings().removeClass("closed");
+            $(this).removeClass("closed").removeClass("open");
         } else {
             $(this).addClass("open");
             $(".habit").not(this).addClass("closed");
         }
     });
     
+    $(".profile.open .habit").not("open").mouseover(function() {
+        $(this).siblings().addClass("other-hover");
+    });
+    
+    $(".profile.open .habit").not("open").mouseout(function() {
+        $(".habit").removeClass("other-hover");
+    });   
+    
     $(".logo").click(function(){
         $(".habit").removeClass("open closed");
-    })
+    });
     
     $("nav a").click(function(){
         if ($(this).hasClass("current")) {
@@ -28,5 +37,9 @@ $(document).ready(function(){
             $("section:not(."+thisId+")")
                 .addClass("closed").removeClass("open");
         }
-    })
+    });
+    
+    $(".friends .profile.closed").click(function(){
+        $(this).removeClass("closed").addClass("open");
+    });
 });

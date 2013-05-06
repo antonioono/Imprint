@@ -83,54 +83,47 @@ body {
   margin: 3.125%;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 body {
   background-image: url("../images/bg.jpg");
   height: 100%;
   width: 100%;
   text-transform: lowercase;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/* line 30, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 header h1 {
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  font-size: 1em;
-  font-family: "Avenir Next LT W01 Demi";
+  font-family: "Avenir Next LT W01 Bold";
   padding-bottom: 1em;
-  cursor: pointer;
 }
 
-/* line 38, ../sass/screen.scss */
-nav {
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  font-size: 1em;
-}
-/* line 41, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 nav ul {
   list-style: none;
 }
-/* line 44, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 nav ul li {
   display: inline-block;
 }
-/* line 47, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 nav ul li a {
   padding: 0.25rem 0;
   top: -.25rem;
   margin-right: 2rem;
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  font-size: 1em;
   font-family: "Avenir Next LT W01 Bold";
   position: relative;
 }
-/* line 55, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 nav ul li a.current {
-  border-bottom: 4pt solid rgba(0, 0, 0, 0.75);
+  border-bottom: 3pt solid rgba(0, 0, 0, 0.75);
 }
-/* line 62, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 nav .profile-picture {
   height: 4em;
   width: 4em;
@@ -140,12 +133,13 @@ nav .profile-picture {
   right: 3.125%;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 section.page.closed {
   display: none;
 }
-/* line 111, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 section.page.profile .habit > h1, section.page .profile .habit > h1 {
+  cursor: pointer;
   text-transform: lowercase;
   position: relative;
   left: 0;
@@ -154,10 +148,10 @@ section.page.profile .habit > h1, section.page .profile .habit > h1 {
   position: absolute;
   background-size: auto 100%;
   background-repeat: no-repeat;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -170,22 +164,21 @@ section.page.profile .habit > h1, section.page .profile .habit > h1 {
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  -ms-transform: scale(0.75);
-  -o-transform: scale(0.75);
-  transform: scale(0.75);
+  font-family: "Avenir Next LT W01 Bold";
+  color: white;
+  font-size: 1.5em;
+  text-indent: -2.5%;
 }
-/* line 124, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 section.page.profile .habit .detail, section.page .profile .habit .detail {
   visibility: hidden;
   opacity: 0;
   position: relative;
   left: 41.66667%;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -199,95 +192,115 @@ section.page.profile .habit .detail, section.page .profile .habit .detail {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 134, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
+section.page.profile .habit .detail .line-graph, section.page .profile .habit .detail .line-graph {
+  position: fixed;
+  bottom: -8em;
+  left: 0;
+  right: 0;
+  background: blue;
+  height: 6em;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 160, ../sass/screen.scss */
 section.page.profile .habit.run > h1, section.page .profile .habit.run > h1 {
-  top: 15%;
-  left: 10%;
-  padding: 25%;
+  top: 9%;
+  left: 6%;
+  padding: 30%;
   background-image: url("../images/habits/run.png");
 }
-/* line 144, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
+section.page.profile .habit.smoke, section.page .profile .habit.smoke {
+  z-index: 999;
+}
+/* line 170, ../sass/screen.scss */
 section.page.profile .habit.smoke > h1, section.page .profile .habit.smoke > h1 {
   top: 30%;
-  left: 70%;
-  padding: 10%;
+  left: 60%;
+  padding: 12%;
   background-image: url("../images/habits/smoke.png");
 }
-/* line 153, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 section.page.profile .habit.eat > h1, section.page .profile .habit.eat > h1 {
-  top: 30%;
-  left: 30%;
-  padding: 12%;
+  top: 12%;
+  left: 42%;
+  padding: 15%;
   background-image: url("../images/habits/eat.png");
 }
-/* line 162, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 section.page.profile .habit.read > h1, section.page .profile .habit.read > h1 {
-  top: 20%;
-  left: 40%;
-  padding: 15%;
+  top: 66%;
+  left: 36%;
+  padding: 9%;
   background-image: url("../images/habits/read.png");
 }
-/* line 171, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 section.page.profile .habit.meditation > h1, section.page .profile .habit.meditation > h1 {
   top: 40%;
   left: 40%;
   padding: 18%;
   background-image: url("../images/habits/meditation.png");
 }
-/* line 179, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 section.page.profile .habit.open, section.page .profile .habit.open {
   height: 100%;
   width: 100%;
 }
-/* line 184, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 section.page.profile .habit.open > h1, section.page .profile .habit.open > h1 {
-  font-family: "Avenir Next LT W01 Bold";
-  left: 0;
-  color: white;
-  font-size: 2em;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
+  z-index: 9999;
 }
-/* line 192, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 section.page.profile .habit.open .detail, section.page .profile .habit.open .detail {
   left: 47.91667%;
   visibility: visible;
   opacity: 1;
 }
-/* line 197, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 section.page.profile .habit.open .detail h1, section.page .profile .habit.open .detail h1 {
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  font-size: 0.75em;
   font-family: "Avenir Next LT W01 Demi";
 }
-/* line 202, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 section.page.profile .habit.open .detail .line-graph, section.page .profile .habit.open .detail .line-graph {
-  position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: blue;
-  height: 6em;
 }
-/* line 229, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
+section.page.profile .habit.other-hover > h1, section.page .profile .habit.other-hover > h1 {
+  opacity: .5;
+  color: transparent;
+}
+/* line 253, ../sass/screen.scss */
+section.page.profile .habit.other-hover.open > h1, section.page .profile .habit.other-hover.open > h1 {
+  opacity: 1 !important;
+  color: white;
+}
+/* line 261, ../sass/screen.scss */
 section.page.profile .habit.closed > h1, section.page .profile .habit.closed > h1 {
-  -webkit-transform: scale(0.25);
-  -moz-transform: scale(0.25);
-  -ms-transform: scale(0.25);
-  -o-transform: scale(0.25);
-  transform: scale(0.25);
-  opacity: .25;
-  top: -2em !important;
-  left: 47.91667%;
-  -webkit-filter: blur(20px);
+  opacity: 0.2 !important;
+  color: transparent;
 }
-/* line 242, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 section.page.friends .profile {
   width: 47.91667%;
   position: relative;
   display: inline-block;
+}
+/* line 281, ../sass/screen.scss */
+section.page.friends .profile.open {
+  width: 100%;
 }

@@ -1,5 +1,5 @@
 @mixin transition-all {
-    @include transition-duration(.5s);
+    @include transition-duration(.25s);
     @include transition-property(all);
     @include transition-delay(0);
     @include transition-timing-function(ease-out);
