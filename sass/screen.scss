@@ -1,5 +1,6 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "./lib/_mixins.scss";
 @import "./lib/_type.scss";
 @import "./lib/_grid.scss";
 
@@ -19,9 +20,10 @@
 // }
 
 body {
-    background-image: url('./images/bg.jpg');
+    background-image: url('../images/bg.jpg');
     height: 100%;
     width: 100%;
+    text-transform: lowercase;
 }
 
 header {
@@ -29,6 +31,7 @@ header {
         @include small-caps(1em);
         font-family: $demi;
         padding-bottom: 1em;
+        cursor: pointer;
     }
 }
 
@@ -66,161 +69,168 @@ nav {
     }
 }
 
-.profile {
-    // margin: 10em auto 0 auto;
-    // background-image: url('../images/habits/profile-habit.png');
-    // height: 50em;
-    // width: 80em;
-    // background-size: 80em 50em;
+section.page {
+    &.closed {
+        display: none;
+    }
+    &.profile {
+        // margin: 10em auto 0 auto;
+        // background-image: url('../images/habits/profile-habit.png');
+        // height: 50em;
+        // width: 80em;
+        // background-size: 80em 50em;
     
-    // @include keyframes(bgcolor) {
-    //   0% {
-    //     @include transform(rotate(0deg));
-    //   }
-    //   100% {
-    //     @include transform(rotate(270deg));
-    //   } 
-    // }
-    // 
-    // display: block;
-    // 
-    // @-webkit-keyframes profile-spin {
-    //     0% {
-    //         @include rotateZ(0deg);
-    //         // background-color: red;
-    //     }
-    //     
-    //     100% {
-    //         @include rotateZ(270deg);
-    //         // background-color: blue;
-    //     }
-    // }
+        // @include keyframes(bgcolor) {
+        //   0% {
+        //     @include transform(rotate(0deg));
+        //   }
+        //   100% {
+        //     @include transform(rotate(270deg));
+        //   } 
+        // }
+        // 
+        // display: block;
+        // 
+        // @-webkit-keyframes profile-spin {
+        //     0% {
+        //         @include rotateZ(0deg);
+        //         // background-color: red;
+        //     }
+        //     
+        //     100% {
+        //         @include rotateZ(270deg);
+        //         // background-color: blue;
+        //     }
+        // }
     
-    // -webkit-animation: profile-spin 10s infinite;
-    .habit {
-                
-        > h1 {
-            text-transform: lowercase;
-            position: relative;
-            left: 0;
-            top: 0;
-            display: block;
-            position: absolute;
-            background-size: auto 100%;
-            background-repeat: no-repeat;
-            @include transition-duration(.5s);
-            @include transition-property(all);
-            @include transition-delay(0);
-            @include transition-timing-function(ease-out);
-        }
-        
-        .detail {
-            display: none;
-        }
-        
-        &.run {
+        // -webkit-animation: profile-spin 10s infinite;
+        .habit {
+    
             > h1 {
-                top: 15%;
-                left: 10%;
-                height:75%;
-                width: 75%;
-                background-image: url('../images/habits/run.png');
-            }
-        }
-        
-        &.smoke {
-            > h1 {
-                top: 30%;
-                left: 70%;
-                height: 30%;
-                width: 30%;
-                background-image: url('../images/habits/smoke.png');
-            }
-        }
-        
-        &.eat {
-            > h1 {
-                top: 30%;
-                left: 30%;
-                height: 30%;
-                width: 30%;
-                background-image: url('../images/habits/eat.png');
-            }
-        }
-        
-        &.read {
-            > h1 {
-                top: 20%;
-                left: 40%;
-                height: 30%;
-                width: 30%;
-                background-image: url('../images/habits/read.png');   
-            }
-        }
-        
-        &.meditation {
-            > h1 {
-                top: 40%;
-                left: 40%;
-                height: 30em;
-                width: 30em;
-                background-image: url('../images/habits/meditation.png');                
-            }
-        }
-        
-        &.open {
-            // left: $gutter;
-            height: 100%;
-            width: 100%;
-            
-            > h1 {
-                font-family: $bold;
-                left: 0;
-                // color: white;
-                // top: 50%;
-                // left: $col;
-                // font-size: 2em;
-            }
-            
-            .detail {
-                display: block;
+                text-transform: lowercase;
                 position: relative;
-                left: $col2;
-                
-                h1 {
-                    @include small-caps(.75em);
-                    font-family: $demi;
+                left: 0;
+                top: 0;
+                display: block;
+                position: absolute;
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                @include transition-all;
+                @include transform(scale(.75));
+            }
+    
+            .detail {
+                visibility: hidden;
+                opacity: 0;
+                position: relative;
+                left: $col2 - ($gutter * 2);
+                @include transition-all;
+            }
+    
+            &.run {
+    
+                > h1 {
+                    top: 15%;
+                    left: 10%;
+                    padding:25%;
+                    // width: 25%;
+                    background-image: url('../images/habits/run.png');
                 }
-                
-                .line-graph {
-                    position: fixed;
-                    bottom: 0;
+            }
+    
+            &.smoke {
+                > h1 {
+                    top: 30%;
+                    left: 70%;
+                    padding: 10%;
+                    background-image: url('../images/habits/smoke.png');
+                }
+            }
+    
+            &.eat {
+                > h1 {
+                    top: 30%;
+                    left: 30%;
+                    padding: 12%;
+                    background-image: url('../images/habits/eat.png');
+                }
+            }
+    
+            &.read {
+                > h1 {
+                    top: 20%;
+                    left: 40%;
+                    padding: 15%;
+                    background-image: url('../images/habits/read.png');   
+                }
+            }
+    
+            &.meditation {
+                > h1 {
+                    top: 40%;
+                    left: 40%;
+                    padding: 18%;
+                    background-image: url('../images/habits/meditation.png');                
+                }
+            }
+    
+            &.open {
+                // left: $gutter;
+                height: 100%;
+                width: 100%;
+    
+                > h1 {
+                    font-family: $bold;
                     left: 0;
-                    right: 0;
-                    background: blue;
-                    height: 6em;
+                    color: white;
+                    font-size: 2em;
+                    @include transform(scale(1));
                 }
-                
-                .settings {
-                    form {
-                        ul {
-                            li {
-                                // &:after {
-                                //     content: "›";
-                                // }
+    
+                .detail {
+                    left: $col2;
+                    visibility: visible;
+                    opacity: 1;
+    
+                    h1 {
+                        @include small-caps(.75em);
+                        font-family: $demi;
+                    }
+    
+                    .line-graph {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: blue;
+                        height: 6em;
+                    }
+    
+                    .check-ins {
+                    }
+    
+                    .settings {
+                        form {
+                            ul {
+                                li {
+                                    // &:after {
+                                    //     content: "›";
+                                    // }
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        
-        &.closed {
-            > h1 {
-                @include transform(scale(.25));
-                opacity: .25;
-                top: -2em !important;
-                -webkit-filter: blur(20px);
+    
+            &.closed {
+                > h1 {
+                    @include transform(scale(.25));
+                    opacity: .25;
+                    top: -2em !important;
+                    left: $col2;
+                    -webkit-filter: blur(20px);
+                }
             }
         }
     }

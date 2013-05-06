@@ -83,37 +83,39 @@ body {
   margin: 3.125%;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 body {
-  background-image: url("./images/bg.jpg");
+  background-image: url("../images/bg.jpg");
   height: 100%;
   width: 100%;
+  text-transform: lowercase;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 header h1 {
   text-transform: uppercase;
   letter-spacing: .125em;
   font-size: 1em;
   font-family: "Avenir Next LT W01 Demi";
   padding-bottom: 1em;
+  cursor: pointer;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 nav {
   text-transform: uppercase;
   letter-spacing: .125em;
   font-size: 1em;
 }
-/* line 38, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 nav ul {
   list-style: none;
 }
-/* line 41, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 nav ul li {
   display: inline-block;
 }
-/* line 44, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 nav ul li a {
   padding: 0.25rem 0;
   top: -.25rem;
@@ -124,11 +126,11 @@ nav ul li a {
   font-family: "Avenir Next LT W01 Bold";
   position: relative;
 }
-/* line 52, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 nav ul li a.current {
   border-bottom: 4pt solid rgba(0, 0, 0, 0.75);
 }
-/* line 59, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 nav .profile-picture {
   height: 4em;
   width: 4em;
@@ -138,8 +140,12 @@ nav .profile-picture {
   right: 3.125%;
 }
 
-/* line 102, ../sass/screen.scss */
-.profile .habit > h1 {
+/* line 73, ../sass/screen.scss */
+section.page.closed {
+  display: none;
+}
+/* line 109, ../sass/screen.scss */
+section.page.profile .habit > h1 {
   text-transform: lowercase;
   position: relative;
   left: 0;
@@ -164,76 +170,102 @@ nav .profile-picture {
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-}
-/* line 117, ../sass/screen.scss */
-.profile .habit .detail {
-  display: none;
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -o-transform: scale(0.75);
+  transform: scale(0.75);
 }
 /* line 122, ../sass/screen.scss */
-.profile .habit.run > h1 {
-  top: 15%;
-  left: 10%;
-  height: 75%;
-  width: 75%;
-  background-image: url("../images/habits/run.png");
+section.page.profile .habit .detail {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  left: 41.66667%;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 /* line 132, ../sass/screen.scss */
-.profile .habit.smoke > h1 {
-  top: 30%;
-  left: 70%;
-  height: 30%;
-  width: 30%;
-  background-image: url("../images/habits/smoke.png");
+section.page.profile .habit.run > h1 {
+  top: 15%;
+  left: 10%;
+  padding: 25%;
+  background-image: url("../images/habits/run.png");
 }
 /* line 142, ../sass/screen.scss */
-.profile .habit.eat > h1 {
+section.page.profile .habit.smoke > h1 {
+  top: 30%;
+  left: 70%;
+  padding: 10%;
+  background-image: url("../images/habits/smoke.png");
+}
+/* line 151, ../sass/screen.scss */
+section.page.profile .habit.eat > h1 {
   top: 30%;
   left: 30%;
-  height: 30%;
-  width: 30%;
+  padding: 12%;
   background-image: url("../images/habits/eat.png");
 }
-/* line 152, ../sass/screen.scss */
-.profile .habit.read > h1 {
+/* line 160, ../sass/screen.scss */
+section.page.profile .habit.read > h1 {
   top: 20%;
   left: 40%;
-  height: 30%;
-  width: 30%;
+  padding: 15%;
   background-image: url("../images/habits/read.png");
 }
-/* line 162, ../sass/screen.scss */
-.profile .habit.meditation > h1 {
+/* line 169, ../sass/screen.scss */
+section.page.profile .habit.meditation > h1 {
   top: 40%;
   left: 40%;
-  height: 30em;
-  width: 30em;
+  padding: 18%;
   background-image: url("../images/habits/meditation.png");
 }
-/* line 171, ../sass/screen.scss */
-.profile .habit.open {
+/* line 177, ../sass/screen.scss */
+section.page.profile .habit.open {
   height: 100%;
   width: 100%;
 }
-/* line 176, ../sass/screen.scss */
-.profile .habit.open > h1 {
+/* line 182, ../sass/screen.scss */
+section.page.profile .habit.open > h1 {
   font-family: "Avenir Next LT W01 Bold";
   left: 0;
-}
-/* line 185, ../sass/screen.scss */
-.profile .habit.open .detail {
-  display: block;
-  position: relative;
-  left: 47.91667%;
+  color: white;
+  font-size: 2em;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 /* line 190, ../sass/screen.scss */
-.profile .habit.open .detail h1 {
+section.page.profile .habit.open .detail {
+  left: 47.91667%;
+  visibility: visible;
+  opacity: 1;
+}
+/* line 195, ../sass/screen.scss */
+section.page.profile .habit.open .detail h1 {
   text-transform: uppercase;
   letter-spacing: .125em;
   font-size: 0.75em;
   font-family: "Avenir Next LT W01 Demi";
 }
-/* line 195, ../sass/screen.scss */
-.profile .habit.open .detail .line-graph {
+/* line 200, ../sass/screen.scss */
+section.page.profile .habit.open .detail .line-graph {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -241,8 +273,8 @@ nav .profile-picture {
   background: blue;
   height: 6em;
 }
-/* line 219, ../sass/screen.scss */
-.profile .habit.closed > h1 {
+/* line 227, ../sass/screen.scss */
+section.page.profile .habit.closed > h1 {
   -webkit-transform: scale(0.25);
   -moz-transform: scale(0.25);
   -ms-transform: scale(0.25);
@@ -250,5 +282,6 @@ nav .profile-picture {
   transform: scale(0.25);
   opacity: .25;
   top: -2em !important;
+  left: 47.91667%;
   -webkit-filter: blur(20px);
 }
