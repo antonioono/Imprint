@@ -18,6 +18,12 @@
 //   } 
 // }
 
+body {
+    background-image: url('./images/bg.jpg');
+    height: 100%;
+    width: 100%;
+}
+
 header {
     h1 {
         @include small-caps(1em);
@@ -91,68 +97,131 @@ nav {
     // }
     
     // -webkit-animation: profile-spin 10s infinite;
-    
     .habit {
-        display: block;
-        position: absolute;
-        // text-indent: -9999em;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        // opacity: .75;
-        @include transition-duration(.25s);
-        @include transition-property(all);
-        @include transition-delay(0);
-        @include transition-timing-function(ease-out);
+                
+        > h1 {
+            text-transform: lowercase;
+            position: relative;
+            left: 0;
+            top: 0;
+            display: block;
+            position: absolute;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            @include transition-duration(.5s);
+            @include transition-property(all);
+            @include transition-delay(0);
+            @include transition-timing-function(ease-out);
+        }
+        
+        .detail {
+            display: none;
+        }
         
         &.run {
-            top: 15%;
-            left: 10%;
-            height:75%;
-            width: 75%;
-            background-image: url('../images/habits/run.png');
+            > h1 {
+                top: 15%;
+                left: 10%;
+                height:75%;
+                width: 75%;
+                background-image: url('../images/habits/run.png');
+            }
         }
         
         &.smoke {
-            top: 30%;
-            left: 70%;
-            height: 30%;
-            width: 30%;
-            background-image: url('../images/habits/smoke.png');
+            > h1 {
+                top: 30%;
+                left: 70%;
+                height: 30%;
+                width: 30%;
+                background-image: url('../images/habits/smoke.png');
+            }
         }
         
         &.eat {
-            top: 30%;
-            left: 30%;
-            height: 30%;
-            width: 30%;
-            background-image: url('../images/habits/eat.png');
+            > h1 {
+                top: 30%;
+                left: 30%;
+                height: 30%;
+                width: 30%;
+                background-image: url('../images/habits/eat.png');
+            }
         }
         
         &.read {
-            top: 20%;
-            left: 40%;
-            height: 30%;
-            width: 30%;
-            background-image: url('../images/habits/read.png');
+            > h1 {
+                top: 20%;
+                left: 40%;
+                height: 30%;
+                width: 30%;
+                background-image: url('../images/habits/read.png');   
+            }
         }
         
         &.meditation {
-            top: 40%;
-            left: 40%;
-            height: 30em;
-            width: 30em;
-            background-image: url('../images/habits/meditation.png');
+            > h1 {
+                top: 40%;
+                left: 40%;
+                height: 30em;
+                width: 30em;
+                background-image: url('../images/habits/meditation.png');                
+            }
         }
         
         &.open {
-            left: $gutter;
+            // left: $gutter;
+            height: 100%;
+            width: 100%;
+            
+            > h1 {
+                font-family: $bold;
+                left: 0;
+                // color: white;
+                // top: 50%;
+                // left: $col;
+                // font-size: 2em;
+            }
+            
+            .detail {
+                display: block;
+                position: relative;
+                left: $col2;
+                
+                h1 {
+                    @include small-caps(.75em);
+                    font-family: $demi;
+                }
+                
+                .line-graph {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: blue;
+                    height: 6em;
+                }
+                
+                .settings {
+                    form {
+                        ul {
+                            li {
+                                // &:after {
+                                //     content: "›";
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
         }
         
         &.closed {
-            @include transform(scale(.25));
-            opacity: .25;
-            top: 6em !important;
-            -webkit-filter: blur(20px);
+            > h1 {
+                @include transform(scale(.25));
+                opacity: .25;
+                top: -2em !important;
+                -webkit-filter: blur(20px);
+            }
         }
     }
 }
