@@ -1,6 +1,11 @@
-$columns: 8;
-$gutter: 3.125% / 2;
-$column: (100% / $columns) - ($gutter * ($columns - 1));
+$columns: 4;
+$gutter: (100% / $columns) / 8;
+$gutters: $columns - 1;
+$col: (100% / $columns) - $gutter;
+
+$col4: $col *  $columns      + $gutter *  $columns;
+$col2: $col * ($columns / 2) + $gutter * ($columns / 3);
+$col3: $col * ($columns / 3) + $gutter * ($columns / 6);
 
 body {
     margin: $gutter;
