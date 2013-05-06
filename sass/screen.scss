@@ -1,6 +1,22 @@
 @import "compass/reset";
+@import "compass/css3";
 @import "./lib/_type.scss";
 @import "./lib/_grid.scss";
+
+// @mixin keyframes($name) {
+//   @-webkit-keyframes #{$name} {
+//     @content; 
+//   }
+//   @-moz-keyframes #{$name} {
+//     @content;
+//   }
+//   @-ms-keyframes #{$name} {
+//     @content;
+//   }
+//   @keyframes #{$name} {
+//     @content;
+//   } 
+// }
 
 header {
     h1 {
@@ -45,44 +61,98 @@ nav {
 }
 
 .profile {
-    margin: 10em auto 0 auto;
-    background-image: url('../images/habits/profile-habit.png');
-    height: 50em;
-    width: 80em;
-    background-size: 80em 50em;
+    // margin: 10em auto 0 auto;
+    // background-image: url('../images/habits/profile-habit.png');
+    // height: 50em;
+    // width: 80em;
+    // background-size: 80em 50em;
+    
+    // @include keyframes(bgcolor) {
+    //   0% {
+    //     @include transform(rotate(0deg));
+    //   }
+    //   100% {
+    //     @include transform(rotate(270deg));
+    //   } 
+    // }
+    // 
+    // display: block;
+    // 
+    // @-webkit-keyframes profile-spin {
+    //     0% {
+    //         @include rotateZ(0deg);
+    //         // background-color: red;
+    //     }
+    //     
+    //     100% {
+    //         @include rotateZ(270deg);
+    //         // background-color: blue;
+    //     }
+    // }
+    
+    // -webkit-animation: profile-spin 10s infinite;
     
     .habit {
         display: block;
         position: absolute;
-        height: 30em;
-        width: 30em;
-        text-indent: -9999px;
-        background-size: 30em 30em;
-        opacity: .75;
-    }
-    .run {
-        top: 15em;
-        left: 50em;
-        //background-image: url('../images/habits/run.png');
-    }
-    .smoke {
-        top: 30em;
-        left: 70em;
-        //background-image: url('../images/habits/smoke.png');
-    }
-    .eat {
-        top: 30em;
-        left: 30em;
-        //background-image: url('../images/habits/eat.png');
-    }
-    .read {
-        top: 20em;
-        left: 40em;
-        //background-image: url('../images/habits/read.png');
-    }
-    .meditation {
-        top: 40em;
-        left: 40em;
-        //background-image: url('../images/habits/meditation.png');
+        // text-indent: -9999em;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        // opacity: .75;
+        @include transition-duration(.25s);
+        @include transition-property(all);
+        @include transition-delay(0);
+        @include transition-timing-function(ease-out);
+        
+        &.run {
+            top: 15%;
+            left: 10%;
+            height:75%;
+            width: 75%;
+            background-image: url('../images/habits/run.png');
+        }
+        
+        &.smoke {
+            top: 30%;
+            left: 70%;
+            height: 30%;
+            width: 30%;
+            background-image: url('../images/habits/smoke.png');
+        }
+        
+        &.eat {
+            top: 30%;
+            left: 30%;
+            height: 30%;
+            width: 30%;
+            background-image: url('../images/habits/eat.png');
+        }
+        
+        &.read {
+            top: 20%;
+            left: 40%;
+            height: 30%;
+            width: 30%;
+            background-image: url('../images/habits/read.png');
+        }
+        
+        &.meditation {
+            top: 40%;
+            left: 40%;
+            height: 30em;
+            width: 30em;
+            background-image: url('../images/habits/meditation.png');
+        }
+        
+        &.open {
+            left: $gutter;
+        }
+        
+        &.closed {
+            @include transform(scale(.25));
+            opacity: .25;
+            top: 6em !important;
+            -webkit-filter: blur(20px);
+        }
     }
 }
