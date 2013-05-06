@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".habit").click(function(){
+    $(".profile.open .habit").click(function(){
         if ($(this).hasClass("closed")) {
             $(".open").removeClass("open");
             $(".closed").removeClass("closed");

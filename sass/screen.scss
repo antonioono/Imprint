@@ -70,10 +70,12 @@ nav {
 }
 
 section.page {
+
     &.closed {
         display: none;
     }
-    &.profile {
+    
+    &.profile, .profile {
         // margin: 10em auto 0 auto;
         // background-image: url('../images/habits/profile-habit.png');
         // height: 50em;
@@ -232,6 +234,15 @@ section.page {
                     -webkit-filter: blur(20px);
                 }
             }
+        }
+    }
+    
+    &.friends {
+        
+        .profile {
+            width: $col2;
+            position: relative;
+            display: inline-block;
         }
     }
 }
