@@ -24,16 +24,14 @@
 
 body {
     background-image: url('../images/bg.jpg');
-    height: 100%;
-    width: 100%;
     text-transform: lowercase;
-    
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow: hidden;
 }
 
 header {
@@ -41,11 +39,19 @@ header {
         // @include small-caps(1em);
         font-family: $bold;
         padding-bottom: 1em;
+        font-size: 1.5em;
     }
+    position: fixed;
 }
 
 nav {
     // @include small-caps;
+    position: relative;
+    z-index: 500;
+    padding-top: 2em;
+    font-size: 1.5em;
+    position: fixed;
+    width: 100%;
     
     ul {
         list-style: none;
@@ -58,33 +64,44 @@ nav {
                 top: -.25rem;
                 margin-right: 2rem;
                 // @include small-caps(1em);
-                font-family: $bold;
+                font-family: $regular;
                 position: relative;
+                letter-spacing: -.08em;
+                opacity: .3;
+                @include transition-all;
                 
-                &.current {
-                    border-bottom: 3pt solid $default-color;
+                &:hover {
+                    opacity: 1;
                 }
             }
         }
     }
     
     .profile-picture {
-        height: 4em;
-        width:  4em;
+        height: 2em;
+        width:  2em;
         border-radius: 50%;
         position: absolute;
-        top: 1em;;
-        right: $gutter;
+        top: 0;
+        right: $gutter * 2;
+        box-shadow: 0 2pt 2pt white;
+        
+        &:before {
+            content: "asdfas";
+            // position: absolute;
+        }
     }
 }
 
 section.page {
-
-    &.closed {
-        display: none;
-    }
+    margin-top: 2em;
+    position: relative;
+    @include transition-all;
     
     &.profile, .profile {
+        opacity: 1;
+        // max-width: 100%;
+        // overflow: hidden;
         // margin: 10em auto 0 auto;
         // background-image: url('../images/habits/profile-habit.png');
         // height: 50em;
@@ -145,13 +162,21 @@ section.page {
                 @include transition-all;
                 
                 .line-graph {
+                    left: 0;
                     position: fixed;
                     bottom: -8em;
-                    left: 0;
-                    right: 0;
-                    background: blue;
+                    width: 50%;
                     height: 6em;
                     @include transition-all;
+                    overflow: scroll;
+                    left: 0;
+
+                    .scroll {
+                        background-size: 100% 100%;
+                        width: 150%;
+                        height: 100%;
+                    }
+                    
                 }
             }
     
@@ -164,6 +189,12 @@ section.page {
                     // width: 25%;
                     background-image: url('../images/habits/run.png');
                 }
+                
+                .line-graph {
+                    .scroll {
+                        background-image: url('../images/habits/run-graph.png');
+                    }
+                }
             }
     
             &.smoke {
@@ -174,6 +205,12 @@ section.page {
                     background-image: url('../images/habits/smoke.png');
                 }
                 z-index: 999;
+
+                .line-graph {
+                    scroll {
+                        background-image: url('../images/habits/smoke-graph.png');
+                    }
+                }                
             }
     
             &.eat {
@@ -182,6 +219,13 @@ section.page {
                     left: 42%;
                     padding: 15%;
                     background-image: url('../images/habits/eat.png');
+                }
+                
+                
+                .line-graph {
+                    .scroll {
+                        background-image: url('../images/habits/eat-graph.png');
+                    }
                 }
             }
     
@@ -192,6 +236,12 @@ section.page {
                     padding: 9%;
                     background-image: url('../images/habits/read.png');   
                 }
+                
+                .line-graph {
+                    .scroll {
+                        background-image: url('../images/habits/read-graph.png'); 
+                    }
+                }
             }
     
             &.meditation {
@@ -200,6 +250,12 @@ section.page {
                     left: 40%;
                     padding: 18%;
                     background-image: url('../images/habits/meditation.png');                
+                }
+                
+                .line-graph {
+                    .scroll {
+                        background-image: url('../images/habits/meditation-graph.png');
+                    }
                 }
             }
     
@@ -216,6 +272,7 @@ section.page {
                     left: $col2;
                     visibility: visible;
                     opacity: 1;
+                    width: $col2;
     
                     h1 {
                         // @include small-caps(.75em);
@@ -223,7 +280,7 @@ section.page {
                     }
     
                     .line-graph {
-                        bottom: 0;
+                        bottom: 2em;
                     }
     
                     .check-ins {
@@ -272,15 +329,54 @@ section.page {
     }
     
     &.friends {
+        @include transition-all;
+        position: relative;
+        top: -25em ;
+        left: $col / 2;
+        width: 100% - $col / 2;
         
-        .profile {
-            width: $col2;
-            position: relative;
-            display: inline-block;
+        &.closed {
+        }
+        
+        ul {
             
-            &.open {
-                width: $col4;
+            li {
+                display: inline-block;
+                
+                &:nth-of-type(even) {
+                    float: right;
+                }
+                &:nth-of-type(odd) {
+                    float: left;
+                    margin-top: -10%;
+                }
+                &:nth-of-type(5) {
+                    margin-top: -18%;
+                }
             }
         }
+    }
+}
+
+body.friends {
+    overflow: auto;
+    nav a.friends {
+        opacity: 1;
+
+    }
+    .page.profile {
+        opacity: .5;
+        left: -75%;
+    }
+}
+
+body.profile {
+    .page.friends {
+        left: 100% - $col / 2;
+        top: -25em;
+    }
+    nav a.profile {
+        opacity: 1;
+    
     }
 }
