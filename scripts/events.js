@@ -1,6 +1,13 @@
 var habitOpen   = false;
 
 $(document).ready(function(){
+    reset();
+    
+    $(".page.closed.profile").mousedown(function(){
+        switchSides("profile");
+        alert('lsdfasdf')
+    });
+    
     $(".page.profile.open .habit").click(function() {
         // already opened
         if (($(this).hasClass("closed")) || ($(this).hasClass("open"))) {
@@ -28,25 +35,6 @@ $(document).ready(function(){
     });
     
     $("nav a").click(function(){
-        // if ($(this).hasClass("current")) {
-        //     null;
-        // } else {
-        //     $(this).addClass("current");
-        //     $("nav a").not(this).removeClass("current");
-        //     
-        //     var thisId = $(this).attr("id");
-        //     $("section." + thisId)
-        //         .addClass("open").removeClass("closed");
-        //         
-        //     $("section:not(."+thisId+")")
-        //         .addClass("closed").removeClass("open");
-        // }
-        // if ($(this).hasClass("profile")) {
-        //     profileOpen = false;
-        // } else {
-        //     profileOpen = true;
-        // 
-        // }
         if ($(this).hasClass("profile")) {
             switchSides("profile");
         } else {
@@ -57,15 +45,9 @@ $(document).ready(function(){
     
     $(".page.closed").click(function(){
         if ($(this).hasClass("profile")) {
-            // $(this).addClass("open").removeClass("closed");
-            // $(".page.friends").addClass("closed").removeClass("open");
-            // alert("foo")
             switchSides("profile");
-            reset();
         } else if ($(this).hasClass("friends")) {
             switchSides("friends");
-            // $(this).addClass("open").removeClass("closed");
-            // $(".page.profile").addClass("closed").removeClass("open");
         }
     });
     
